@@ -7,11 +7,28 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style.css">
+    
     <style>
         .container-fluid-sm ul li:hover{
           background-color:  #00C1FE
          }
+         body {
+           overflow-x:hidden;
+         }
+         @media (max-width:992px){
+          #side{
+            position: absolute;
+            margin-left: -700px;
+            z-index: 1;
+          } 
+          
+          #sidebtn:checked+#side{
+            
+            margin-left: 0px;
+          }
+ }
+    
+         
         
     </style>
 </head>
@@ -20,7 +37,7 @@
     <div class="row align-items-start">
     <?php include 'side.php' ; ?>
 
-      <div class="col" style="padding: 0;width: 100%;">
+      <div class="col-lg-10 col-md-12 col-sm-12 " style="padding: 0;  ">
       <?php include 'nav.php' ; ?>
         <div class="col" style="background-color: #E5E5E5; height: 100%;">
             <nav class="navbar navbar-light px-3">
@@ -31,17 +48,19 @@
                   </form>
                 </div>
             </nav>
-            <div class="container border-top border-2 ps-5" id="row">
-                <div class="row row-cols-7 py-3 text-muted" style="font-size: 90%;">
-                  <div class="col">Name</div>
-                  <div class="col">Payment Schedule</div>
-                  <div class="col">Bill Number</div>
-                  <div class="col">Bill Number</div>
-                  <div class="col">Balance amount</div>
-                  <div class="col">Date </div>
-                  <div class="col"></div>
-                </div>
-                <div class="row row-cols-7 py-3 bg-white my-2 me-2">
+            <div class="container" style="overflow-x:scroll;">
+              <div style="min-width:1000px; ">
+                <div class="container border-top border-2 ps-5 " id="row">
+                  <div class="row row-cols-7 py-3 text-muted" style="font-size: 90%;">
+                    <div class="col">Name</div>
+                    <div class="col">Payment Schedule</div>
+                    <div class="col">Bill Number</div>
+                    <div class="col">Bill Number</div>
+                    <div class="col">Balance amount</div>  
+                    <div class="col">Date </div>
+                    <div class="col"></div>
+                  </div>
+                  <div class="row row-cols-7 py-3 bg-white my-2 me-2">
                     <div class="col" >Karthi</div>
                     <div class="col">First</div>
                     <div class="col">00012223</div>
@@ -51,8 +70,8 @@
                     <div class="col text-end">
                       <a href="#"><img class="pe-2" src="view.png" alt=""></a>
                     </div>
-                </div>
-                <div class="row row-cols-7 py-3 my-2 me-2">
+                  </div>
+                  <div class="row row-cols-7 py-3 my-2 me-2">
                     <div class="col" >Karthi</div>
                     <div class="col">First</div>
                     <div class="col">00012223</div>
@@ -62,8 +81,8 @@
                     <div class="col text-end">
                       <a href="#"><img class="pe-2" src="view.png" alt=""></a>
                     </div>
-                </div>
-                <div class="row row-cols-7 py-3 bg-white my-2 me-2">
+                  </div>
+                  <div class="row row-cols-7 py-3 bg-white my-2 me-2">
                     <div class="col" >Karthi</div>
                     <div class="col">First</div>
                     <div class="col">00012223</div>
@@ -73,8 +92,8 @@
                     <div class="col text-end">
                       <a href="#"><img class="pe-2" src="view.png" alt=""></a>
                     </div>
-                </div>
-                <div class="row row-cols-7 py-3  my-2 me-2">
+                  </div>
+                  <div class="row row-cols-7 py-3  my-2 me-2">
                     <div class="col" >Karthi</div>
                     <div class="col">First</div>
                     <div class="col">00012223</div>
@@ -84,8 +103,10 @@
                     <div class="col text-end">
                       <a href="#"><img class="pe-2" src="view.png" alt=""></a>
                     </div>
+                  </div>
                 </div>
-
+              </div>
+            </div>
         </div>
 </div>
   

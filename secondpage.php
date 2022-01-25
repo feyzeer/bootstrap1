@@ -14,33 +14,33 @@
 <body>
     <div class="d-flex">
     <?php include 'side.php' ; ?>
-        <main class="w-100 px-4">
+        <div class="w-100 px-4">
         <?php include 'nav.php' ; ?>
            
             
               <div class="row pt-3">
-                <div style="min-width: 150px;" class="col" >
+                <div style="min-width: 150px;" class="col">
                   <div class="p-1 mt-2 rounded w-100" style="background: #F0F9FF; border-radius: 10%;" >
                   <i class="bi bi-mortarboard fs-3" style="color: #74C1ED;"></i>
                   <p>Student</p>
                   <p class="text-end fw-bold fs-5">243</p>
                 </div>
                 </div>  
-                <div style="min-width: 150px" class="col"  >
+                <div style="min-width: 150px" class="col">
                   <div class="p-1 mt-2 rounded w-100" style="background: #FEF6FB; border-radius: 10%;">
                     <i class="bi bi-bookmark fs-3" style="color: #EE95C5;"></i>
                     <p>Course</p>
                     <p class="text-end fw-bold fs-5">13</p>
                   </div>
                 </div>       
-                <div style="min-width: 150px" class="col"  >
+                <div style="min-width: 150px" class="col">
                   <div class="p-1 mt-2 rounded w-100" style="background: #FEFBEC; border-radius: 10%;">
                     <i class="bi bi-currency-dollar fs-3" style="color: #74C1ED;"></i> 
                     <p>Payment</p>
                     <p class="text-end fw-bold fs-5">DHS 556,000</p>
                   </div>
                 </div>
-                <div style="min-width: 150px" class="co"  >
+                <div style="min-width: 150px" class="col">
                   <div class="p-1 mt-2 rounded w-100" style="background: linear-gradient(to right bottom, #00C1FE 18.27%, #FAFFC1 91.84%); border-radius: 10%;">
                     <i class="bi bi-person text-white fs-3" ></i>
                     <p class="text-white">Users</p>
