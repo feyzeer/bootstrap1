@@ -26,6 +26,9 @@
             
             margin-left: 0px;
           }
+          .container{
+            overflow-x:scroll;
+          }
  }
     
          
@@ -48,7 +51,7 @@
                   </form>
                 </div>
             </nav>
-            <div class="container" style="overflow-x:scroll;">
+            <div class="container" >
               <div style="min-width:1000px; ">
                 <div class="container border-top border-2 ps-5 " id="row">
                   <div class="row row-cols-7 py-3 text-muted" style="font-size: 90%;">
@@ -59,51 +62,29 @@
                     <div class="col">Balance amount</div>  
                     <div class="col">Date </div>
                     <div class="col"></div>
-                  </div>
-                  <div class="row row-cols-7 py-3 bg-white my-2 me-2">
-                    <div class="col" >Karthi</div>
-                    <div class="col">First</div>
-                    <div class="col">00012223</div>
-                    <div class="col">DHS 100,000</div>
-                    <div class="col">DHS 500,000</div>
-                    <div class="col">05-Jan, 2022</div>
-                    <div class="col text-end">
-                      <a href="#"><img class="pe-2" src="view.png" alt=""></a>
-                    </div>
-                  </div>
-                  <div class="row row-cols-7 py-3 my-2 me-2">
-                    <div class="col" >Karthi</div>
-                    <div class="col">First</div>
-                    <div class="col">00012223</div>
-                    <div class="col">DHS 100,000</div>
-                    <div class="col">DHS 500,000</div>
-                    <div class="col">05-Jan, 2022</div>
-                    <div class="col text-end">
-                      <a href="#"><img class="pe-2" src="view.png" alt=""></a>
-                    </div>
-                  </div>
-                  <div class="row row-cols-7 py-3 bg-white my-2 me-2">
-                    <div class="col" >Karthi</div>
-                    <div class="col">First</div>
-                    <div class="col">00012223</div>
-                    <div class="col">DHS 100,000</div>
-                    <div class="col">DHS 500,000</div>
-                    <div class="col">05-Jan, 2022</div>
-                    <div class="col text-end">
-                      <a href="#"><img class="pe-2" src="view.png" alt=""></a>
-                    </div>
-                  </div>
-                  <div class="row row-cols-7 py-3  my-2 me-2">
-                    <div class="col" >Karthi</div>
-                    <div class="col">First</div>
-                    <div class="col">00012223</div>
-                    <div class="col">DHS 100,000</div>
-                    <div class="col">DHS 500,000</div>
-                    <div class="col">05-Jan, 2022</div>
-                    <div class="col text-end">
-                      <a href="#"><img class="pe-2" src="view.png" alt=""></a>
-                    </div>
-                  </div>
+                    <?php
+                        $payments = json_decode(file_get_contents('last.json'),true);
+                       
+
+
+                  
+                        foreach($payments AS $payment)
+                        {
+                           
+                      ?>
+                        <div class="row row-cols-7 py-3 bg-white my-2 me-2">
+                            <div class="col pb-2" ><img  src="lastpic.png" alt=""></div>
+                            <div class="col py-3"><?php echo $payment['Name'] ?></div>
+                            <div class="col py-3"><?php echo $payment['Payment Schedule'] ?></div>
+                            <div class="col py-3"><?php echo $payment['Bill Number'] ?></div>
+                            <div class="col py-3"><?php echo $payment['Amount paid'] ?></div>
+                            <div class="col py-3"><?php echo $payment['Balance amount'] ?></div>
+                            <div class="col py-3"><?php echo $payment['Date'] ?></div>
+                            <div class="col text-end py-3">
+                            <a href="#"><img class="pe-2" src="view.png" alt=""></a>
+                            </div>
+                        </div>
+                      <?php } ?>
                 </div>
               </div>
             </div>

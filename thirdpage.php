@@ -1,3 +1,12 @@
+<?php
+  include_once('connection.php');
+  $sql = "SELECT * FROM students";
+  $result = $connection->query($sql);
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +35,10 @@
             
             margin-left: 0px;
           }
+          .container{
+            overflow-x:scroll;
+          }
+
  }
     
          
@@ -48,12 +61,12 @@
                   <a class="navbar-brand fw-bold">Students List</a>
                   <form class="d-flex">
                     <a class="me-5 mt-1" href="#"><img src="Vector.png" alt=""></a>
-                    <button class="btn btn-outline-white text-white bg-info" type="submit">ADD NEW STUDENT</button>
+                    <button class="btn btn-outline-white  bg-info "  type="submit"><a class="text-white nav-link" href= "add_students.php"> ADD NEW STUDENT</a></button>
                   </form>
                 </div>
             </nav>
-            <div class="container" style="overflow-x:scroll;">
-                  <div style="min-width:1000px; ">
+            <div class="container">
+                  <div style="min-width:1000px;">
                     <div class="container border-top border-2 m-2 text-nowrap " >
                       <div class="row  py-2 text-muted text-nowrap" style="font-size: 70%;">
                           <div class="col"></div>
@@ -64,65 +77,34 @@
                           <div class="col">Date of admission</div>
                           <div class="col"></div>
                         </div>
+                      <?php
+
+                      
+                    if ($result->num_rows > 0) {
+                      // output data of each row
+                      while($row = $result->fetch_assoc()) {
+                      echo'
                       <div class="row bg-white rounded my-2 me-1 text-nowrap" >
-                        <div class="col pb-2" ><img  src="lastpic.png" alt=""></div>
-                        <div class="col py-3">username</div>
-                        <div class="col py-3">user@email.com</div>
-                        <div class="col py-3">7305477760</div>
-                        <div class="col py-3">1234567305477760</div>
-                        <div class="col py-3">08-Dec, 2021</div>
-                        <div class="col text-end py-3">
-                          <a href="#"><img class="pe-2"  src="modif.png" alt=""></a>
-                          <a href="#"><img src="poub.png" alt=""></a>
+                            <div class="col pb-2" ><img  src="lastpic.png" alt=""></div>
+                            <div class="col py-3"> '.$row['name'].' </div>
+                            <div class="col py-3">  '.$row['e_mail'].'</div>
+                            <div class="col py-3"> '. $row['phone'].' </div>
+                            <div class="col py-3"> '. $row['enroll_number'].'</div>
+                            <div class="col py-3">'  .$row['date_of_admission'].'</div>
+                            <div class="col text-end py-3">
+                            <a href="update.php?id='.$row['id'].'"><img class="pe-2"  src="modif.png" alt=""></a>
+                            <a href="delete.php?id='.$row['id'].'"><img src="poub.png" alt=""></a>
+                            </div>
                         </div>
-                      </div>
-                      <div class="row bg-white rounded my-2 me-1 text-nowrap" >
-                        <div class="col pb-2"><img src="lastpic.png" alt=""></div>
-                        <div class="col py-3">username</div>
-                        <div class="col py-3">user@email.com</div>
-                        <div class="col py-3">7305477760</div>
-                        <div class="col py-3">1234567305477760</div>
-                        <div class="col py-3">08-Dec, 2021</div>
-                        <div class="col text-end py-3">
-                          <a href="#"><img class="pe-2" src="modif.png" alt=""></a>
-                          <a href="#"><img src="poub.png" alt=""></a>
-                        </div>
-                      </div>
-                      <div class="row bg-white rounded my-2 me-1 text-nowrap" >
-                        <div class="col pb-2"><img src="lastpic.png" alt=""></div>
-                        <div class="col py-3">username</div>
-                        <div class="col py-3">user@email.com</div>
-                        <div class="col py-3">7305477760</div>
-                        <div class="col py-3">1234567305477760</div>
-                        <div class="col py-3">08-Dec, 2021</div>
-                        <div class="col text-end py-3">
-                          <a href="#"><img class="pe-2" src="modif.png" alt=""></a>
-                          <a href="#"><img src="poub.png" alt=""></a>
-                        </div>
-                      </div>
-                      <div class="row bg-white rounded my-2 me-1 text-nowrap">
-                        <div class="col pb-2"><img src="lastpic.png" alt=""></div>
-                        <div class="col py-3">username</div>
-                        <div class="col py-3">user@email.com</div>
-                        <div class="col py-3">7305477760</div>
-                        <div class="col py-3">1234567305477760</div>
-                        <div class="col py-3">08-Dec, 2021</div>
-                        <div class="col text-end py-3">
-                          <a href="#"><img class="pe-2" src="modif.png" alt=""></a>
-                          <a href="#"><img src="poub.png" alt=""></a>
-                        </div>
-                      </div>
-                      <div class="row bg-white rounded my-2 me-1 text-nowrap">
-                        <div class="col pb-2"><img src="lastpic.png" alt=""></div>
-                        <div class="col py-3">username</div>
-                        <div class="col py-3">user@email.com</div>
-                        <div class="col py-3">7305477760</div>
-                        <div class="col py-3">1234567305477760</div>
-                        <div class="col py-3">08-Dec, 2021</div>
-                        <div class="col text-end py-3">
-                          <a href="#"><img class="pe-2" src="modif.png" alt=""></a>
-                          <a href="#"><img src="poub.png" alt=""></a>
-                      </div>
+                        ';
+                      }
+                    } else {
+                      echo "0 results";
+                    }
+                           
+                      ?>
+                
+                     
                     </div>
                   </div>
             </div>
